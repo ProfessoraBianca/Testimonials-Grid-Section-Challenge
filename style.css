@@ -19,12 +19,86 @@
 }
 
 body {
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
     background-color: var(--grey200);
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
+main {
+    width: 1440px;
+    display: grid;
+    gap: 2rem;
+    grid:
 
+    '   da  da  jo  ki   '
+    '   je  pa  pa  ki   '
+;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: 2px 2px 2px 5px rgba(0, 0, 0, 0.274);
+
+}
+.user {
+    display: flex;
+    align-items: center;
+}
+.names {
+    margin-left: 1rem;
+}
 img {
+    display: block;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+}
+h1, h2 {
+    font-weight: 500;
+}
+h2 {
+    font-size: 1rem;
+}
+.card_daniel, .card_jonathan, .card_patrick {
+    color: var(--white);
+}
+.card_daniel {
+    grid-area: da;
+    background-color: var(--purple500);
+
+
+}
+.card_jonathan {
+    grid-area: jo;
+    background-color: var(--grey400);
+}
+.card_jeanette {
+    grid-area: je;
+    background-color: var(--grey100);
+}
+.card_patrick {
+    grid-area: pa;
+    background-color: var(--black);
+}
+.card_kira {
+    grid-area: ki;
+    background-color: var(--grey200);
+}
+.title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    text-align: left;
+}
+q {
+    font-size: 1rem;
+    font-weight: 500;
 }
