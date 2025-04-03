@@ -1,9 +1,9 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --purple50: hsl(260, 100%, 95%);
     --purple300: hsl(264, 82%, 80%);
@@ -16,6 +16,7 @@
     --darkBlue: hsl(219, 29%, 14%);
     --black: hsl(0, 0%, 7%);
 }
+
 body {
     min-height: 100vh;
     display: flex;
@@ -27,9 +28,12 @@ body {
     font-style: normal;
     position: relative;
 }
+
+/* Theme Toggler Button by: Bernardo Poggioni */
 .dark {
     background: #2c2c2c;
 }
+
 .theme-toggler {
     width: 62px;
     height: 32px;
@@ -40,32 +44,37 @@ body {
     top: 2rem;
     right: 2rem;
 }
+
 .theme-toggler.active {
     background: #181818;
     border: 2px solid var(--grey100);
 }
+
 .circle {
     width: 24px;
     height: 24px;
     border-radius: 100%;
     background: #181818;
-    transform: translate(4px,0);
+    transform: translate(4px, 0);
     transition: 0.3s ease-in-out;
 }
+
 .circle.active {
     background: var(--grey100);
-    transform: translate(calc(35px - 4px),0);
+    transform: translate(calc(35px - 4px), 0);
 
 }
+
 main {
     min-width: 380px;
     display: grid;
     gap: 2rem;
     grid:
-    '   da  da  jo  ki   '
-    '   je  pa  pa  ki   '
-;
+        '   da  da  jo  ki   '
+        '   je  pa  pa  ki   '
+    ;
 }
+
 .cards {
     display: flex;
     flex-direction: column;
@@ -73,13 +82,16 @@ main {
     padding: 2rem;
     box-shadow: 20px 40px 20px rgba(0, 0, 0, 0.1);
     transition: all 200ms ease-out;
+
     &:hover {
         box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
         transform: scale(1.1);
     }
 }
+
 .cards.active {
     box-shadow: 20px 40px 30px rgba(255, 255, 255, 0.06);
+
     &:hover {
         box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.06);
         transform: scale(1.1);
@@ -93,37 +105,54 @@ main {
     right: 4.5rem;
     top: 0;
 }
+
 .user {
     display: flex;
     align-items: center;
 }
+
 .names {
     margin-left: 1rem;
 }
-.dan, .jon, .jea, .pat, .kir {
+
+.dan,
+.jon,
+.jea,
+.pat,
+.kir {
     display: block;
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
+
 .dan {
     box-shadow: 0 0 .5px 2px hsl(264, 97.10%, 72.50%);
 }
+
 .pat {
     box-shadow: 0 0 .5px 2px var(--purple500);
 }
-h1, h2 {
+
+h1,
+h2 {
     font-weight: 500;
 }
+
 h1 {
     font-size: .9rem;
 }
+
 h2 {
     font-size: .7rem;
 }
-.card_daniel, .card_jonathan, .card_patrick {
+
+.card_daniel,
+.card_jonathan,
+.card_patrick {
     color: var(--grey100);
 }
+
 .card_daniel {
     grid-area: da;
     background-color: var(--purple500);
@@ -131,29 +160,34 @@ h2 {
     position: relative;
 
 }
+
 .card_jonathan {
     grid-area: jo;
     background-color: var(--grey500);
     width: 250px;
 }
+
 .card_jeanette {
     grid-area: je;
     background-color: var(--white);
     width: 250px;
     z-index: 2;
 }
+
 .card_patrick {
     grid-area: pa;
     background-color: var(--darkBlue);
     width: 540px;
     z-index: 2;
 }
+
 .card_kira {
     grid-area: ki;
     background-color: var(--white);
     width: 250px;
 
 }
+
 .title {
     font-size: 1.2rem;
     font-weight: 600;
@@ -161,56 +195,68 @@ h2 {
     text-align: left;
     z-index: 1;
 }
+
 q {
     font-size: .8rem;
     font-weight: 500;
     color: var(--grey200);
 }
 
-.card_jeanette > q, .card_kira > q {
-    color: var(--grey500);
-}
-.card_jeanette > .title, .card_kira > .title {
+.card_jeanette>q,
+.card_kira>q {
     color: var(--grey500);
 }
 
-@media screen and (max-width:1200px){
+.card_jeanette>.title,
+.card_kira>.title {
+    color: var(--grey500);
+}
+
+@media screen and (max-width:1200px) {
     main {
         margin: 3rem 0;
         padding: 2rem;
         grid:
-        '  da  da  '
-        '  ki  jo  '
-        '  ki  je  '
-        '  pa  pa  '
-    ;
-    gap: 1.5rem;
-}
+            '  da  da  '
+            '  ki  jo  '
+            '  ki  je  '
+            '  pa  pa  '
+        ;
+        gap: 1.5rem;
+    }
+
     .theme-toggler {
-        
+
         transform: scale(.7);
     }
 
 }
-@media screen and (max-width:590px){
+
+@media screen and (max-width:590px) {
 
     main {
         padding: 2rem;
         grid:
-        '  da  '
-        '  da  '
-        '  jo  '
-        '  je  '
-        '  pa  '
-        '  pa  '
-        '  ki  '
-        '  ki  '
-    ;
+            '  da  '
+            '  da  '
+            '  jo  '
+            '  je  '
+            '  pa  '
+            '  pa  '
+            '  ki  '
+            '  ki  '
+        ;
     }
+
     .quote {
         display: none;
     }
-    .card_daniel, .card_jonathan, .card_jeanette, .card_patrick, .card_kira {
+
+    .card_daniel,
+    .card_jonathan,
+    .card_jeanette,
+    .card_patrick,
+    .card_kira {
         width: 300px;
     }
 }
