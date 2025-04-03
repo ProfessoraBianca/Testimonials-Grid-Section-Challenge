@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 :root {
     --purple50: hsl(260, 100%, 95%);
@@ -17,36 +16,40 @@
     --darkBlue: hsl(219, 29%, 14%);
     --black: hsl(0, 0%, 7%);
 }
-
 body {
-
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid red;
-    background-color: var(--grey200);
+    background-color: var(--grey100);
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
 main {
-    width: 1440px;
+    min-width: 380px;
     display: grid;
     gap: 2rem;
     grid:
-
     '   da  da  jo  ki   '
     '   je  pa  pa  ki   '
 ;
+
+
 }
 .cards {
     display: flex;
     flex-direction: column;
     border-radius: .5rem;
     padding: 2rem;
-    box-shadow: 2px 2px 2px 5px rgba(0, 0, 0, 0.274);
-
+    box-shadow: 20px 40px 20px rgba(0, 0, 0, 0.1);
+}
+.quote {
+    width: 105px;
+    z-index: 0;
+    position: absolute;
+    right: 4.5rem;
+    top: 0;
 }
 .user {
     display: flex;
@@ -55,50 +58,110 @@ main {
 .names {
     margin-left: 1rem;
 }
-img {
+.dan, .jon, .jea, .pat, .kir {
     display: block;
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
+.dan {
+    box-shadow: 0 0 .5px 2px hsl(264, 97.10%, 72.50%);
+}
+.pat {
+    box-shadow: 0 0 .5px 2px var(--purple500);
+}
 h1, h2 {
     font-weight: 500;
 }
+h1 {
+    font-size: .9rem;
+}
 h2 {
-    font-size: 1rem;
+    font-size: .7rem;
 }
 .card_daniel, .card_jonathan, .card_patrick {
-    color: var(--white);
+    color: var(--grey100);
 }
 .card_daniel {
     grid-area: da;
     background-color: var(--purple500);
-
+    width: 540px;
+    position: relative;
 
 }
 .card_jonathan {
     grid-area: jo;
-    background-color: var(--grey400);
+    background-color: var(--grey500);
+    width: 250px;
 }
 .card_jeanette {
     grid-area: je;
-    background-color: var(--grey100);
+    background-color: var(--white);
+    width: 250px;
 }
 .card_patrick {
     grid-area: pa;
-    background-color: var(--black);
+    background-color: var(--darkBlue);
+    width: 540px;
 }
 .card_kira {
     grid-area: ki;
-    background-color: var(--grey200);
+    background-color: var(--white);
+    width: 250px;
+
 }
 .title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin: 1rem 0;
     text-align: left;
+    z-index: 1;
 }
 q {
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 500;
+    color: var(--grey200);
+}
+
+.card_jeanette > q, .card_kira > q {
+    color: var(--grey500);
+}
+.card_jeanette > .title, .card_kira > .title {
+    color: var(--grey500);
+}
+
+@media screen and (max-width:1200px){
+    main {
+        padding: 2rem;
+        grid:
+        '  da  da  '
+        '  ki  jo  '
+        '  ki  je  '
+        '  pa  pa  '
+    ;
+    gap: 1.5rem;
+}
+
+}
+@media screen and (max-width:590px){
+
+    main {
+        padding: 2rem;
+        grid:
+        '  da  '
+        '  da  '
+        '  jo  '
+        '  je  '
+        '  pa  '
+        '  pa  '
+        '  ki  '
+        '  ki  '
+    ;
+    }
+    .quote {
+        display: none;
+    }
+    .card_daniel, .card_jonathan, .card_jeanette, .card_patrick, .card_kira {
+        width: 300px;
+    }
 }
