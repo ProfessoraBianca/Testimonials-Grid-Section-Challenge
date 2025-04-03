@@ -25,6 +25,37 @@ body {
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 500;
     font-style: normal;
+    position: relative;
+}
+.dark {
+    background: #2c2c2c;
+}
+.theme-toggler {
+    width: 62px;
+    height: 32px;
+    background: var(--grey100);
+    border-radius: 999px;
+    border: 2px solid #181818;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+.theme-toggler.active {
+    background: #181818;
+    border: 2px solid var(--grey100);
+}
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background: #181818;
+    transform: translate(4px,0);
+    transition: 0.3s ease-in-out;
+}
+.circle.active {
+    background: var(--grey100);
+    transform: translate(calc(35px - 4px),0);
+
 }
 main {
     min-width: 380px;
@@ -34,8 +65,6 @@ main {
     '   da  da  jo  ki   '
     '   je  pa  pa  ki   '
 ;
-
-
 }
 .cards {
     display: flex;
@@ -43,7 +72,20 @@ main {
     border-radius: .5rem;
     padding: 2rem;
     box-shadow: 20px 40px 20px rgba(0, 0, 0, 0.1);
+    transition: all 200ms ease-out;
+    &:hover {
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        transform: scale(1.1);
+    }
 }
+.cards.active {
+    box-shadow: 20px 40px 30px rgba(255, 255, 255, 0.06);
+    &:hover {
+        box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.06);
+        transform: scale(1.1);
+    }
+}
+
 .quote {
     width: 105px;
     z-index: 0;
@@ -98,11 +140,13 @@ h2 {
     grid-area: je;
     background-color: var(--white);
     width: 250px;
+    z-index: 2;
 }
 .card_patrick {
     grid-area: pa;
     background-color: var(--darkBlue);
     width: 540px;
+    z-index: 2;
 }
 .card_kira {
     grid-area: ki;
@@ -132,6 +176,7 @@ q {
 
 @media screen and (max-width:1200px){
     main {
+        margin: 3rem 0;
         padding: 2rem;
         grid:
         '  da  da  '
@@ -141,6 +186,10 @@ q {
     ;
     gap: 1.5rem;
 }
+    .theme-toggler {
+        
+        transform: scale(.7);
+    }
 
 }
 @media screen and (max-width:590px){
